@@ -1,26 +1,26 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
-import ChangePassword from "@components/my-account/change-password";
+import Help from "@components/my-account/help";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
-export default function ChangePasswordPage() {
+export default function HelpCenter() {
   return (
     <>
       <Seo
-        title="Change Password"
+        title="Help Center"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/change-password"
+        path="account/help-center"
       />
       <AccountLayout>
-        <ChangePassword />
+        <Help />
       </AccountLayout>
     </>
   );
 }
 
-ChangePasswordPage.Layout = Layout;
+HelpCenter.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -29,8 +29,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "common",
         "forms",
         "menu",
-        "terms",
-        "faq",
+        "help",
         "footer"
       ]))
     }

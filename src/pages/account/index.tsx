@@ -1,22 +1,20 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
+import AccountDetails from "@components/my-account/account-details";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import PaymentBox from "@components/payment/payment-content";
-import { usePaymentQuery } from "@framework/payment/payment";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
 export default function AccountDetailsPage() {
-  let { data, isLoading } = usePaymentQuery();
   return (
     <>
       <Seo
-        title="Payment"
+        title="Account Settings"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/payment"
+        path="account/account-settings"
       />
       <AccountLayout>
-        {!isLoading ? <PaymentBox items={data?.data} /> : <div>Loading...</div>}
+        <AccountDetails />
       </AccountLayout>
     </>
   );

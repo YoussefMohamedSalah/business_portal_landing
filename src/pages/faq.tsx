@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Layout from "@components/layout/layout-landing";
 import Container from "@components/ui/container";
 import PageHeroSection from "@components/ui/page-hero-section";

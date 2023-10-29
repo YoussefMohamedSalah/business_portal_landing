@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import Button from '@components/ui/button';
-import { useForm } from 'react-hook-form';
+import { useState } from "react";
+import Button from "@components/ui/button";
+import { useForm } from "react-hook-form";
 import {
   useUpdateUserMutation,
-  UpdateUserType,
-} from '@framework/customer/use-update-customer';
-import { useTranslation } from 'next-i18next';
-import Switch from '@components/ui/switch';
-import Heading from '@components/ui/heading';
-import Text from '@components/ui/text';
+  UpdateUserType
+} from "@framework/user/use-update-customer";
+import { useTranslation } from "next-i18next";
+import Switch from "@components/ui/switch";
+import Heading from "@components/ui/heading";
+import Text from "@components/ui/text";
 
 const defaultValues = {};
 const AccountDetails: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { mutate: updateUser, isLoading } = useUpdateUserMutation();
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<UpdateUserType>({
-    defaultValues,
+    defaultValues
   });
   function onSubmit(input: UpdateUserType) {
     updateUser(input);
@@ -27,7 +27,7 @@ const AccountDetails: React.FC = () => {
     <div className="w-full flex flex-col">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Heading variant="titleLarge">
-          {t('text-account-details-personal')}
+          {t("text-account-details-personal")}
         </Heading>
         <NotificationItem
           title="notification-one-title"
@@ -39,7 +39,7 @@ const AccountDetails: React.FC = () => {
         />
 
         <Heading variant="titleLarge" className="pt-6 xl:pt-12">
-          {t('text-account-details-account')}
+          {t("text-account-details-account")}
         </Heading>
 
         <div className="relative">
@@ -60,7 +60,7 @@ const AccountDetails: React.FC = () => {
             className="h-12 mt-3 w-full sm:w-auto"
             variant="formButton"
           >
-            {t('button-save-changes')}
+            {t("button-save-changes")}
           </Button>
         </div>
       </form>
@@ -76,10 +76,10 @@ interface NotificationItemProps {
 }
 const NotificationItem: React.FC<NotificationItemProps> = ({
   title,
-  description,
+  description
 }) => {
   const [checked, setChecked] = useState(true);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div className="relative flex pt-6 lg:pt-10">
       <div className="pe-2.5">

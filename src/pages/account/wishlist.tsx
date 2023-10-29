@@ -1,26 +1,29 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
-import Help from "@components/my-account/help";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
-export default function HelpCenter() {
+export default function LegalNotice() {
+  const { t } = useTranslation();
   return (
     <>
       <Seo
-        title="Help Center"
+        title="Wishlist"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/help-center"
+        path="account/wishlist"
       />
       <AccountLayout>
-        <Help />
+        <h2 className="text-base md:text-lg xl:text-[20px] font-medium text-skin-base  lg:pt-0">
+          {t("common:text-account-wishlist")}
+        </h2>
       </AccountLayout>
     </>
   );
 }
 
-HelpCenter.Layout = Layout;
+LegalNotice.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -29,7 +32,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "common",
         "forms",
         "menu",
-        "help",
         "footer"
       ]))
     }

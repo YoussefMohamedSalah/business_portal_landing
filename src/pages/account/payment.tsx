@@ -1,31 +1,28 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
-import Wishlist from "@components/my-account/wishlist";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+import PaymentBox from "@components/payment/payment-content";
+import { usePaymentQuery } from "@framework/payment/payment";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
-export default function LegalNotice() {
-  const { t } = useTranslation();
+export default function AccountDetailsPage() {
+  let { data, isLoading } = usePaymentQuery();
   return (
     <>
       <Seo
-        title="Wishlist"
+        title="Payment"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/wishlist"
+        path="account/payment"
       />
       <AccountLayout>
-        <h2 className="text-base md:text-lg xl:text-[20px] font-medium text-skin-base  lg:pt-0">
-          {t("common:text-account-wishlist")}
-        </h2>
-        <Wishlist />
+        {!isLoading ? <PaymentBox items={data?.data} /> : <div>Loading...</div>}
       </AccountLayout>
     </>
   );
 }
 
-LegalNotice.Layout = Layout;
+AccountDetailsPage.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {

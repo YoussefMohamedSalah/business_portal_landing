@@ -13,7 +13,7 @@ export default function AccountDetailsPage() {
       <Seo
         title="Address"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/address"
+        path="account/address"
       />
       <AccountLayout>
         {!isLoading ? (

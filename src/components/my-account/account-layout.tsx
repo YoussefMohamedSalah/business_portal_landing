@@ -1,21 +1,21 @@
-import { IoSettingsOutline } from 'react-icons/io5';
-import Container from '@components/ui/container';
-import AccountNav from '@components/my-account/account-nav';
-import AccountNavMobile from './account-nav-mobile';
-import { ROUTES } from '@utils/routes';
-import SettingsIcon from '@components/icons/account-settings';
-import OrdersIcon from '@components/icons/account-order';
-import WishlistIcon from '@components/icons/account-wishlist';
-import MapIcon from '@components/icons/account-address';
-import NotificationIcon from '@components/icons/account-notification';
-import HelpIcon from '@components/icons/account-help';
-import NoticeIcon from '@components/icons/account-notice';
+import { IoSettingsOutline } from "react-icons/io5";
+import Container from "@components/ui/container";
+import AccountNav from "@components/my-account/account-nav";
+import AccountNavMobile from "./account-nav-mobile";
+import { ROUTES } from "@utils/routes";
+import SettingsIcon from "@components/icons/account-settings";
+import OrdersIcon from "@components/icons/account-order";
+import WishlistIcon from "@components/icons/account-wishlist";
+import MapIcon from "@components/icons/account-address";
+import NotificationIcon from "@components/icons/account-notification";
+import HelpIcon from "@components/icons/account-help";
+import NoticeIcon from "@components/icons/account-notice";
 
 const accountMenu = [
   {
     slug: ROUTES.ACCOUNT_SETTING,
-    name: 'account-settings',
-    icon: <SettingsIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+    name: "account-settings",
+    icon: <SettingsIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
   },
   // {
   //   slug: ROUTES.ORDERS,
@@ -29,31 +29,31 @@ const accountMenu = [
   // },
   {
     slug: ROUTES.ADDRESS,
-    name: 'text-address',
-    icon: <MapIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+    name: "text-address",
+    icon: <MapIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
   },
   {
     slug: ROUTES.NOTIFICATION,
-    name: 'text-notifications',
-    icon: <NotificationIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+    name: "text-notifications",
+    icon: <NotificationIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
   },
   {
     slug: ROUTES.LEGAL_NOTICE,
-    name: 'text-account-details-notice',
-    icon: <NoticeIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+    name: "text-account-details-notice",
+    icon: <NoticeIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
   },
   {
     slug: ROUTES.HELP_CENTER,
-    name: 'text-account-details-help',
-    icon: <HelpIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />,
+    name: "text-account-details-help",
+    icon: <HelpIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
   },
   {
     slug: ROUTES.CHANGE_PASSWORD,
-    name: 'text-change-password',
+    name: "text-change-password",
     icon: (
       <IoSettingsOutline className="w-5 md:w-[22px] h-5 md:h-[22px] text-[#8C969F]" />
-    ),
-  },
+    )
+  }
 ];
 
 const AccountLayout: React.FunctionComponent<{}> = ({ children }) => {

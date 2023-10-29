@@ -1,26 +1,26 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
-import AccountDetails from "@components/my-account/account-details";
+import Notifications from "@components/my-account/notification";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
-export default function AccountDetailsPage() {
+export default function Notification() {
   return (
     <>
       <Seo
-        title="Account Settings"
+        title="Notification"
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        path="my-account/account-settings"
+        path="account/notification"
       />
       <AccountLayout>
-        <AccountDetails />
+        <Notifications />
       </AccountLayout>
     </>
   );
 }
 
-AccountDetailsPage.Layout = Layout;
+Notification.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {

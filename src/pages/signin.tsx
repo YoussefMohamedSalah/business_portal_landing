@@ -2,7 +2,6 @@ import Layout from "@components/layout/layout-landing";
 import LoginForm from "@components/auth/login-form";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Divider from "@components/ui/divider";
 import Seo from "@components/seo/seo";
 
 export default function SignInPage() {

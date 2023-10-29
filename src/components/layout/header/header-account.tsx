@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         <div className="innerSticky w-screen lg:w-full transition-all duration-200 ease-in-out body-font bg-white z-20">
           <div className="border-b border-white/10 bg-skin-three">
             <Container>
-              <div className="flex bg-skin-three items-center justify-between  py-2 md:py-6">
+              <div className="flex bg-skin-three items-center justify-between  py-2 md:py-4">
                 <LogoBack className="logo ps-3 md:ps-0 lg:mx-0" />
                 {/* End of logo */}
                 <div className="flex space-s-5 xl:space-s-8 lg:max-w-[33%]">
