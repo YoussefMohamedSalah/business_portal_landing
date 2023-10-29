@@ -1,15 +1,10 @@
 import Seo from "@components/seo/seo";
 import Layout from "@components/layout/layout-landing";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import {
-  homeThreeHeroSlider as heroSlider
-} from "@framework/static/banner";
+import { heroSlider } from "@framework/static/banner";
 import { GetStaticProps } from "next";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
-// import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
-// import { fetchBestSellerProducts } from "@framework/product/get-all-best-seller-products";
-// import { LIMITS } from "@framework/utils/limits";
 import HeroSliderBlock from "@components/hero/hero-slider-block";
 
 export default function Home() {
@@ -22,7 +17,7 @@ export default function Home() {
       />
       <HeroSliderBlock
         heroBanner={heroSlider}
-        heroContent={false}
+        heroContent={true}
         className="mb-5"
         contentClassName="p-7 sm:pb-24 xl:pb-32 sm:pt-16 xl:pt-24 md:min-h-[400px] xl:min-h-[560px] 2xl:min-h-[750px]"
       />
