@@ -36,7 +36,7 @@ export interface LoginInputType {
 
 export const useLoginMutation = () => {
   return useMutation<any, Error, LoginInputType>(async (input) => {
-    const { data } = await http.post(Endpoints.REGISTER, input);
+    const { data } = await http.post(Endpoints.LOGIN, input);
     return data;
   });
 };

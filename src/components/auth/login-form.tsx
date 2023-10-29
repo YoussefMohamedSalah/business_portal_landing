@@ -13,6 +13,7 @@ import { FaFacebook, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import cn from "classnames";
 import { useUI } from "@contexts/ui.context";
 import Cookies from "js-cookie";
+import Router from "next/router";
 
 interface LoginFormProps {
   isPopup?: boolean;
@@ -39,11 +40,25 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
         password,
         remember_me
       });
-      Cookies.set("session", data);
-      Cookies.set("company", data.company);
-      Cookies.set("access_token", data.session);
+      Cookies.set("session", JSON.stringify(data));
+      Cookies.set("session", JSON.stringify(data), {
+        domain: "https://www.cp-portal.com"
+      });
+      Cookies.set("company", JSON.stringify(data.company));
+      Cookies.set("company", JSON.stringify(data.company), {
+        domain: "https://www.cp-portal.com"
+      });
+      Cookies.set("access_token", JSON.stringify(data.access));
+      Cookies.set("access_token", JSON.stringify(data.access), {
+        domain: "https://www.cp-portal.com"
+      });
       authorize();
       closeModal();
+      if (data.company?.stepper_state === true) {
+        Router.push("https://www.cp-portal.com");
+      } else {
+        Router.push("/account");
+      }
     } catch (err: any) {
       console.log(err.response?.data?.msg!);
     }

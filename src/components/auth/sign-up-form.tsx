@@ -52,9 +52,18 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         password,
         remember_me
       });
-      Cookies.set("session", data);
-      Cookies.set("company", data.company);
-      Cookies.set("access_token", data.session);
+      Cookies.set("session", JSON.stringify(data));
+      Cookies.set("session", JSON.stringify(data), {
+        domain: "https://www.cp-portal.com"
+      });
+      Cookies.set("company", JSON.stringify(data.company));
+      Cookies.set("company", JSON.stringify(data.company), {
+        domain: "https://www.cp-portal.com"
+      });
+      Cookies.set("access_token", JSON.stringify(data.access));
+      Cookies.set("access_token", JSON.stringify(data.access), {
+        domain: "https://www.cp-portal.com"
+      });
       authorize();
       closeModal();
     } catch (err: any) {
