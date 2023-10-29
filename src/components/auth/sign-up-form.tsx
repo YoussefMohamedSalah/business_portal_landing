@@ -1,18 +1,19 @@
-import { useState } from 'react';
-import Input from '@components/ui/form/input';
-import PasswordInput from '@components/ui/form/password-input';
-import Button from '@components/ui/button';
-import { useForm } from 'react-hook-form';
-import Logo from '@components/ui/logo';
-import { useSignUpMutation, SignUpInputType } from '@framework/auth/use-signup';
-import Link from '@components/ui/link';
-import { useTranslation } from 'next-i18next';
-import Image from '@components/ui/image';
-import { useModalAction } from '@components/common/modal/modal.context';
-import Switch from '@components/ui/switch';
-import CloseButton from '@components/ui/close-button';
-import cn from 'classnames';
-import { ROUTES } from '@utils/routes';
+import { useState } from "react";
+import Input from "@components/ui/form/input";
+import PasswordInput from "@components/ui/form/password-input";
+import Button from "@components/ui/button";
+import { useForm } from "react-hook-form";
+import { useSignUpMutation, SignUpInputType } from "@framework/auth/use-signup";
+import Link from "@components/ui/link";
+import { useTranslation } from "next-i18next";
+import Image from "@components/ui/image";
+import { useModalAction } from "@components/common/modal/modal.context";
+import Switch from "@components/ui/switch";
+import CloseButton from "@components/ui/close-button";
+import cn from "classnames";
+import { ROUTES } from "@utils/routes";
+import Cookies from "js-cookie";
+import { useUI } from "@contexts/ui.context";
 
 interface SignUpFormProps {
   isPopup?: boolean;
@@ -21,37 +22,49 @@ interface SignUpFormProps {
 
 const SignUpForm: React.FC<SignUpFormProps> = ({
   isPopup = true,
-  className,
+  className
 }) => {
   const { t } = useTranslation();
-  const { mutate: signUp, isLoading } = useSignUpMutation();
+  const { mutateAsync: signUp, isLoading } = useSignUpMutation();
   const { closeModal, openModal } = useModalAction();
+  const { authorize } = useUI();
   const [remember, setRemember] = useState(false);
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<SignUpInputType>();
 
   function handleSignIn() {
-    return openModal('LOGIN_VIEW');
+    return openModal("LOGIN_VIEW");
   }
-  function handleForgetPassword() {
-    return openModal('FORGET_PASSWORD');
-  }
-  function onSubmit({ name, email, password, remember_me }: SignUpInputType) {
-    signUp({
-      name,
-      email,
-      password,
-      remember_me,
-    });
-    console.log(name, email, password, 'sign form values');
-  }
+
+  const onSubmit = async ({
+    name,
+    email,
+    password,
+    remember_me
+  }: SignUpInputType) => {
+    try {
+      const data = await signUp({
+        name,
+        email,
+        password,
+        remember_me
+      });
+      Cookies.set("session", data);
+      Cookies.set("company", data.company);
+      Cookies.set("access_token", data.session);
+      authorize();
+      closeModal();
+    } catch (err: any) {
+      console.log(err.response?.data?.msg!);
+    }
+  };
   return (
     <div
       className={cn(
-        'flex bg-skin-fill mx-auto rounded-lg w-full lg:w-[1000px] 2xl:w-[1200px]',
+        "flex bg-skin-fill mx-auto rounded-lg w-full lg:w-[1000px] 2xl:w-[1200px]",
         className
       )}
     >
@@ -59,7 +72,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       <div className="flex bg-skin-fill mx-auto rounded-lg overflow-hidden w-full">
         <div className="md:w-[55%] xl:w-[60%] registration hidden md:block">
           <Image
-            src="/assets/images/login.jpg"
+            src="/assets/images/banner7.jpg"
             alt="sign up"
             width={800}
             height={620}
@@ -68,18 +81,17 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         </div>
         <div className="w-full md:w-[45%] xl:w-[40%] py-6 sm:py-10 px-4 sm:px-8 lg:px-12  rounded-md shadow-dropDown flex flex-col justify-center">
           <div className="text-center mb-6 pt-2.5">
-
             <h4 className="text-skin-base font-medium text-xl sm:text-2xl  sm:pt-3 ">
-              {t('common:text-sign-up-for-free')}
+              {t("common:text-sign-up-for-free")}
             </h4>
             <div className="text-sm sm:text-base text-body text-center mt-3 mb-1">
-              {t('common:text-already-registered')}
+              {t("common:text-already-registered")}
               <button
                 type="button"
                 className="ms-1 text-sm sm:text-base text-skin-primary  hover:no-underline focus:outline-none"
                 onClick={handleSignIn}
               >
-                {t('common:text-sign-in-now')}
+                {t("common:text-sign-in-now")}
               </button>
             </div>
           </div>
@@ -90,33 +102,33 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
           >
             <div className="flex flex-col space-y-4">
               <Input
-                label={t('forms:label-name')}
+                label={t("forms:label-name")}
                 type="text"
                 variant="solid"
-                {...register('name', {
-                  required: 'forms:name-required',
+                {...register("name", {
+                  required: "forms:name-required"
                 })}
                 error={errors.name?.message}
               />
               <Input
-                label={t('forms:label-email')}
+                label={t("forms:label-email")}
                 type="email"
                 variant="solid"
-                {...register('email', {
-                  required: `${t('forms:email-required')}`,
+                {...register("email", {
+                  required: `${t("forms:email-required")}`,
                   pattern: {
                     value:
                       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                    message: t('forms:email-error'),
-                  },
+                    message: t("forms:email-error")
+                  }
                 })}
                 error={errors.email?.message}
               />
               <PasswordInput
-                label={t('forms:label-password')}
+                label={t("forms:label-password")}
                 error={errors.password?.message}
-                {...register('password', {
-                  required: `${t('forms:password-required')}`,
+                {...register("password", {
+                  required: `${t("forms:password-required")}`
                 })}
               />
               <div className="flex items-center justify-center">
@@ -129,7 +141,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                     htmlFor="remember"
                     className="flex-shrink-0 text-sm text-heading ps-5 mt-1 cursor-pointer"
                   >
-                    {t('forms:label-remember-me')}
+                    {t("forms:label-remember-me")}
                   </label>
                 </div>
                 <div className="flex ms-auto mt-[2px]" onClick={closeModal}>
@@ -137,7 +149,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                     href={ROUTES.PRIVACY}
                     className="text-end text-sm text-heading ps-3 hover:no-underline hover:text-skin-base focus:outline-none focus:text-skin-base"
                   >
-                    {t('common:text-privacy-and-policy')}
+                    {t("common:text-privacy-and-policy")}
                   </Link>
                 </div>
               </div>
@@ -149,7 +161,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                   className="h-11 md:h-12 w-full mt-2 font-15px md:font-15px tracking-normal"
                   variant="formButton"
                 >
-                  {t('common:text-register')}
+                  {t("common:text-register")}
                 </Button>
               </div>
             </div>
