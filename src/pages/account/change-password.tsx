@@ -10,7 +10,7 @@ export default function ChangePasswordPage() {
     <>
       <Seo
         title="Change Password"
-        description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Fastest Portal built with Latest Tech To help you manage Your Company, Sites and Projects Easily."
         path="account/change-password"
       />
       <AccountLayout>

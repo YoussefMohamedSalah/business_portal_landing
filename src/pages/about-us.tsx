@@ -13,7 +13,7 @@ export default function AboutUsPage() {
     <>
       <Seo
         title="About Us"
-        description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Fastest Portal built with Latest Tech To help you manage Your Company, Sites and Projects Easily."
         path="about-us"
       />
       <PageHeroSection heroTitle="text-page-contacts" />
