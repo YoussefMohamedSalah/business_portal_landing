@@ -18,9 +18,9 @@ const PaymentPopup = dynamic(
 const PhoneNumberPopup = dynamic(
   () => import('@components/common/form/add-contact')
 );
-const DeliveryAddresses = dynamic(
-  () => import('@components/address/delivery-addresses')
-);
+// const DeliveryAddresses = dynamic(
+//   () => import('@components/address/delivery-addresses')
+// );
 
 const ManagedModal: React.FC = () => {
   const { isOpen, view } = useModalState();
@@ -35,7 +35,7 @@ const ManagedModal: React.FC = () => {
       {view === 'ADDRESS_VIEW_AND_EDIT' && <AddressPopup />}
       {view === 'PAYMENT' && <PaymentPopup />}
       {view === 'PHONE_NUMBER' && <PhoneNumberPopup />}
-      {view === 'DELIVERY_VIEW' && <DeliveryAddresses />}
+      {/* {view === 'DELIVERY_VIEW' && <DeliveryAddresses />} */}
     </Modal>
   );
 };

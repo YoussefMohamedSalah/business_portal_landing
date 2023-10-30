@@ -1,29 +1,26 @@
 import Layout from "@components/layout/layout-account";
 import AccountLayout from "@components/my-account/account-layout";
+import AccountDetails from "@components/my-account/initial";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import Seo from "@components/seo/seo";
 
-export default function LegalNotice() {
-  const { t } = useTranslation();
+export default function AccountDetailsPage() {
   return (
     <>
       <Seo
-        title="Wishlist"
+        title="Initial Settings"
         description="Fastest Portal built with Latest Tech To help you manage Your Company, Sites and Projects Easily."
-        path="account/wishlist"
+        path="account/initial"
       />
       <AccountLayout>
-        <h2 className="text-base md:text-lg xl:text-[20px] font-medium text-skin-base  lg:pt-0">
-          {t("common:text-account-wishlist")}
-        </h2>
+        <AccountDetails />
       </AccountLayout>
     </>
   );
 }
 
-LegalNotice.Layout = Layout;
+AccountDetailsPage.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {

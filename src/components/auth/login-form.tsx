@@ -42,20 +42,20 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
       });
       Cookies.set("session", JSON.stringify(data));
       Cookies.set("session", JSON.stringify(data), {
-        domain: "https://www.cp-portal.com"
+        domain: "https://www.portal.cp-portal.com"
       });
       Cookies.set("company", JSON.stringify(data.company));
       Cookies.set("company", JSON.stringify(data.company), {
-        domain: "https://www.cp-portal.com"
+        domain: "https://www.portal.cp-portal.com"
       });
       Cookies.set("access_token", JSON.stringify(data.access));
       Cookies.set("access_token", JSON.stringify(data.access), {
-        domain: "https://www.cp-portal.com"
+        domain: "https://www.portal.cp-portal.com"
       });
       authorize();
       closeModal();
       if (data.company?.stepper_state === true) {
-        Router.push("https://www.cp-portal.com");
+        Router.push("https://www.portal.cp-portal.com");
       } else {
         Router.push("/account");
       }

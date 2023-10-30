@@ -1,32 +1,35 @@
 import Input from "@components/ui/form/input";
-import PasswordInput from "@components/ui/form/password-input";
 import Button from "@components/ui/button";
 import Heading from "@components/ui/heading";
-import { useForm, Controller } from "react-hook-form";
-import {
-  useUpdateUserMutation,
-  UpdateUserType
-} from "@framework/user/use-update-customer";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
-import Switch from "@components/ui/switch";
-import Text from "@components/ui/text";
+import {
+  useInitialDataMutation,
+  InitialDataType
+} from "@framework/initial/use-initial";
 
-const defaultValues = {};
+const defaultValues: InitialDataType = {
+  otp: "",
+  address: "",
+  size: "",
+  name: ""
+};
 
 const AccountDetails: React.FC = () => {
-  const { mutate: updateUser, isLoading } = useUpdateUserMutation();
+  const { mutate: updateUser, isLoading } = useInitialDataMutation();
   const { t } = useTranslation();
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    control
-  } = useForm<UpdateUserType>({
+    formState: { errors }
+  } = useForm<InitialDataType>({
     defaultValues
   });
-  function onSubmit(input: UpdateUserType) {
-    updateUser(input);
+  function onSubmit(values: InitialDataType) {
+    console.log(values);
+    updateUser(values);
   }
+
   return (
     <div className="w-full flex flex-col">
       <Heading variant="titleLarge" className="mb-5 md:mb-6 lg:mb-7 lg:-mt-1">
@@ -40,35 +43,19 @@ const AccountDetails: React.FC = () => {
         <div className="border-skin-base border-b pb-7 md:pb-8 lg:pb-10">
           <div className="flex flex-col space-y-4 sm:space-y-5">
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
-              <Input
-                label={t("forms:label-first-name")}
-                {...register("firstName", {
-                  required: "forms:first-name-required"
-                })}
-                variant="solid"
-                className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-                error={errors.firstName?.message}
-              />
-              <Input
-                label={t("forms:label-last-name")}
-                {...register("lastName", {
-                  required: "forms:last-name-required"
-                })}
-                variant="solid"
-                className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-                error={errors.lastName?.message}
-              />
+              <span className="flex items-center justify-center min-w-[30px] md:min-w-[37px] min-h-[30px] bg-skin-fill text-skin-base rounded p-1 mx-1 md:mx-1.5">
+                {t("forms:label-otp-content")}
+              </span>
             </div>
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <Input
-                type="tel"
-                label={t("forms:label-phone")}
-                {...register("phoneNumber", {
-                  required: "forms:phone-required"
+                type="text"
+                label={t("forms:label-otp")}
+                {...register("otp", {
+                  required: "forms:otp-required"
                 })}
                 variant="solid"
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-                error={errors.phoneNumber?.message}
               />
             </div>
           </div>
@@ -83,43 +70,46 @@ const AccountDetails: React.FC = () => {
           <div className="flex flex-col space-y-4 sm:space-y-5">
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <Input
-                type="email"
-                label={t("forms:label-email-star")}
-                {...register("email", {
-                  required: "forms:email-required",
-                  pattern: {
-                    value:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                    message: "forms:email-error"
-                  }
+                type="text"
+                label={t("forms:label-company-name")}
+                {...register("name", {
+                  required: "forms:company-name-required"
                 })}
-                variant="solid"
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-                error={errors.email?.message}
+                error={errors.name?.message}
               />
             </div>
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
-              <PasswordInput
-                type="tel"
-                label={t("forms:label-password")}
-                {...register("password", {
-                  required: "forms:password-required"
+              <Input
+                type="text"
+                label={t("forms:label-address")}
+                {...register("address", {
+                  required: "forms:address-required"
                 })}
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-                error={errors.password?.message}
+                error={errors.address?.message}
               />
-              <PasswordInput
+              <Input
+                label={t("forms:label-company-size")}
+                {...register("size", {
+                  required: "forms:size-required"
+                })}
+                placeholder="EX: 100 - 150"
+                error={errors.size?.message}
+                className="w-full sm:w-1/2 px-1.5 md:px-2.5"
+              />
+              {/* <Input
                 label={t("forms:label-confirm-password")}
-                {...register("confirmPassword", {
+                {...register("size", {
                   required: "forms:password-required"
                 })}
-                error={errors.confirmPassword?.message}
+                error={errors.size?.message}
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
-              />
+              /> */}
             </div>
           </div>
         </div>
-        <div className="relative flex pt-6 md:pt-8 lg:pt-10">
+        {/* <div className="relative flex pt-6 md:pt-8 lg:pt-10">
           <div className="pe-2.5">
             <Heading className="font-medium mb-1">
               {t("common:text-share-profile-data")}
@@ -158,7 +148,7 @@ const AccountDetails: React.FC = () => {
               )}
             />
           </div>
-        </div>
+        </div> */}
         <div className="relative flex sm:ms-auto mt-5 pb-2 lg:pb-0">
           <Button
             type="submit"

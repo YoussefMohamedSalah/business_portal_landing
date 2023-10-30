@@ -39,6 +39,8 @@ export default function AccountNav({ options }: { options: Option[] }) {
           </Link>
         );
       })}
+
+      
       <button
         className="flex items-center text-sm lg:text-15px text-skin-base py-3.5 px-3.5 xl:px-4 2xl:px-5 mb-1 cursor-pointer focus:outline-none"
         onClick={() => logout()}

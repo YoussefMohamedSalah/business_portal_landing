@@ -43,11 +43,10 @@
   "banner-meat-needs-title": "Smart Electric New Cooker 2021/2022",
   "banner-thousand-grocery-title": "Featured Products  Coffee Machine 2018/2019",
   "banner-healthy-vegetable-description": "This all-in-one cooking solution uses an induction system that reacts.",
-  
+
   "banner-title": "Join Now For Free!",
   "banner-description": "All You Need Exists Now, In The Best all-in-one Management Portal.",
-  
-  
+
   "banner-thousand-grocery-title-description": "This all-in-one cooking solution uses an induction system that reacts.",
   "button-send-message": "Send Message",
   "button-go-home": "Go Home",
@@ -68,7 +67,7 @@
   "notification-four-title": "Website Maintenance",
   "notification-four-description": "I am totally responsible for my Website Maintenance service",
   "forgot-password-helper": "We'll send you a link to reset your password",
-  "account-settings": "Account Settings",
+  "initial": "Account Info",
   "text-card-thumbnail": "Card Thumbnail",
   "text-app-thumbnail": "App Thumbnail",
   "text-logout": "Logout",
@@ -142,7 +141,7 @@
   "text-phone-details": "+966 53 251 6305",
   "text-contact-page-header": "Do you need support? Our team is ready to help",
   "text-contact-page-explore": "We are passionate about building carefully thought out  products that will improve your design workflow.",
-  "text-account-details-personal": "Personal Information",
+  "text-account-details-personal": "Validation OTP",
   "text-account-details-account": "Account Information",
   "text-account-details-help": "Help Center",
   "text-account-details-password": "Change Password",

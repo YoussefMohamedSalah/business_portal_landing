@@ -43,10 +43,10 @@
 
   "banner-thousand-grocery-title": "ألف من أفضل منتجات البقالة",
   "banner-healthy-vegetable-description": "نحن نصدر أفضل أنواع لحوم البقر ولحم الضأن ولحم الخنزير ونبيعها ، ويتم الحصول عليها بأكبر قدر من العناية من المزارع.",
-  
+
   "banner-title": "انضم الان مجانا",
   "banner-description": "كل ما تحتاج الان بين يديك, انضم الأن بشكل مجاني للحصول علي افضل بورتال إداري",
-  
+
   "banner-thousand-grocery-title-description": "تسوق البقالة عبر الإنترنت بسعر منخفض في جميع أنحاء العالم على Razor",
   "button-send-message": "إرسال رسالة",
   "button-go-home": "عد للمنزل",
@@ -67,7 +67,7 @@
   "notification-four-title": "صيانة موقع الويب",
   "notification-four-description": "أنا مسؤول مسؤولية كاملة عن خدمة صيانة موقع الويب الخاص بي",
   "forgot-password-helper": "سنرسل لك رابطا لإعادة تعيين كلمة المرور",
-  "account-settings": "إعدادات الحساب",
+  "initial": "معلومات الحساب",
   "text-card-thumbnail": "صورة مصغرة للبطاقة",
   "text-app-thumbnail": "صورة مصغرة للتطبيق",
   "text-logout": "الخروج",
@@ -139,7 +139,7 @@
   "text-phone-details": "+966 53 251 6305",
   "text-contact-page-header": "هل تحتاج إلى دعم؟ فريقنا جاهز للمساعدة",
   "text-contact-page-explore": "نحن متحمسون لإنشاء منتجات مدروسة بعناية من شأنها تحسين سير عمل التصميم.",
-  "text-account-details-personal": "المعلومات الشخصية",
+  "text-account-details-personal": "تفعيل الحساب",
   "text-account-details-account": "معلومات الحساب",
   "text-account-details-help": "مركز المساعدة",
   "text-account-details-password": "تغيير كلمة المرور",

@@ -5,6 +5,9 @@
   "password-old-required": "You must need to provide your old password",
   "password-new-required": "You must need to provide your new password",
   "name-required": "You must need to provide your full name",
+  "company-name-required": "You must need to provide your Company name",
+  "size-required": "You must need to provide your company Size",
+  "otp-required": "You must need to provide your OTP",
   "first-name-required": "First name is required",
   "display-name-required": "Display name is required",
   "name-subject": "Your subject is required",
@@ -30,7 +33,11 @@
   "label-name-star": "Name *",
   "label-email-star": "Email *",
   "label-address": "Address *",
+  "label-company-name": "Company Name *",
+  "label-company-size": "Company Size *",
   "label-phone": "Phone/Mobile *",
+  "label-otp": "OTP*",
+  "label-otp-content": "OTP Sent To Your Email",
   "label-city": "City/Town",
   "label-display-name": "Display Name *",
   "label-confirm-password": "Confirm Password",
@@ -55,5 +62,4 @@
   "contact-title-required": "Contact title is required",
   "default-type-required": "Default type Required",
   "contact-number-required": "Contact number is required"
-  
 }

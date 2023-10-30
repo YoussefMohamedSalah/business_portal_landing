@@ -5,6 +5,11 @@
   "password-old-required": "يجب أن تحتاج إلى توفير كلمة المرور القديمة",
   "password-new-required": "يجب أن تحتاج إلى توفير كلمة المرور الجديدة",
   "name-required": "يجب عليك تقديم اسمك الكامل",
+
+  "company-name-required": "يجب عليك تقديم اسم شركتك",
+  "size-required": "يجب عليك تقديم حجم شركتك",
+  "otp-required": "يجب عليك تقديم الكود السري",
+
   "first-name-required": "الاسم الأول مطلوب",
   "display-name-required": "اسم العرض مطلوب",
   "name-subject": "الموضوع مطلوب",
@@ -30,7 +35,12 @@
   "label-name-star": "الاسم *",
   "label-email-star": "البريد الإلكتروني *",
   "label-address": "العنوان *",
+  "label-company-name": "اسم الشركة *",
+  "label-company-size": "حجم الشركة *",
+
   "label-phone": "الهاتف / الهاتف المحمول *",
+  "label-otp": "الكود المتغير *",
+  "label-otp-content": "تم ارسال الكود المتغير علي الايميل الخاص بك",
   "label-city": "المدينة/ المدينة",
   "label-display-name": "اسم العرض *",
   "label-confirm-password": "تأكيد كلمة المرور",
@@ -54,5 +64,5 @@
   "label-contact-title": "عنوان جهة الاتصال",
   "contact-title-required": "عنوان جهة الاتصال مطلوب",
   "default-type-required": "النوع الافتراضي مطلوب",
-  "contact-number-required": "رقم جهة الاتصال مطلوب" 
-    }
+  "contact-number-required": "رقم جهة الاتصال مطلوب"
+}
