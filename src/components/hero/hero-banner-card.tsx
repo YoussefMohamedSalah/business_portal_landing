@@ -57,7 +57,7 @@ const HeroBannerCard: FC<BannerProps> = ({
         <div className={dir === "ltr" ? "text-left" : "text-right"}>
           <h2
             className={cn(
-              "text-2xl md:text-4xl font-medium leading-snug md:leading-tight xl:leading-[1.3em] mb-3 md:mb-4 xl:mb-3 -mt-2 xl:-mt-3 2xl:-mt-4",
+              "text-2xl md:text-4xl font-bold leading-snug md:leading-tight xl:leading-[1.3em] mb-3 md:mb-4 xl:mb-3 -mt-2 xl:-mt-3 2xl:-mt-4 capitalize",
               {
                 "text-skin-secondary xl:text-5xl 2xl:text-[48px]":
                   variant === "default",
@@ -72,7 +72,7 @@ const HeroBannerCard: FC<BannerProps> = ({
           </h2>
           <p
             className={cn(
-              "text-base md:text-[15px] xl:text-lg leading-7 md:leading-8 xl:leading-[1.92em]",
+              "text-base md:text-[15px] xl:text-[28px] font-semibold leading-7 md:leading-8 xl:leading-[1.92em] capitalize",
               {
                 "text-skin-base text-opacity-80 ": variant === "default",
                 "text-skin-inverted": variant === "slider",

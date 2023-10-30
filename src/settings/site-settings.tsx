@@ -2,7 +2,7 @@ import { SAFlag } from "@components/icons/language/SAFlag";
 import { USFlag } from "@components/icons/language/USFlag";
 
 export const siteSettings = {
-  name: "cp-portal",
+  name: "Cp-Portal",
   description:
     "Introducing cp-portal, the ultimate solution for construction companies, revolutionizing the way you manage projects and streamline your operations. Our powerful web application is designed to enhance efficiency, collaboration, and productivity throughout every stage of the construction process.",
   author: {

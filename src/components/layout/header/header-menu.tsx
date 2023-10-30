@@ -23,7 +23,7 @@ const HeaderMenu: React.FC<MenuProps> = ({ data, className, bgPrimary }) => {
         >
           <Link
             href={item.path}
-            className={`uppercase inline-flex items-center text-sm text-white py-2 font-medium relative  ${
+            className={`uppercase inline-flex items-center text-lg text-white py-2 font-medium relative  ${
               !bgPrimary && "group-hover:text-skin-primary"
             }`}
           >

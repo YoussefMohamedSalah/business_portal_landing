@@ -40,7 +40,7 @@ const Header: React.FC = () => {
           displayMobileSearch && "active-mobile-search"
         )}
       >
-        <div className="innerSticky bg-skin-three  lg:w-full transition-all duration-200 ease-in-out body-font  z-20">
+        <div className="innerSticky bg-skin-three lg:w-full transition-all duration-200 ease-in-out body-font  z-20">
           <div className="navbar top-6 lg:block px-4 lg:px-10">
             <div className="flex justify-between items-center md:gap-8 py-2 lg:py-0">
               <Logo className="transition-all duration-200 ease-in-out " />

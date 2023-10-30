@@ -16,7 +16,7 @@ export default function AboutUsPage() {
         description="Fastest Portal built with Latest Tech To help you manage Your Company, Sites and Projects Easily."
         path="about-us"
       />
-      <PageHeroSection heroTitle="text-page-contacts" />
+      <PageHeroSection heroTitle="text-page-about-us" />
       <Container>
         <div className="flex flex-wrap bg-skin-fill w-full  xl:py-12  relative z-10">
           <div className="w-full md:w-[53%] xl:w-[60%] md:pe-8 lg:pe-0 2xl:pe-24 lg:mb-0 mb-8">

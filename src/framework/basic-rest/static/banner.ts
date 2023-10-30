@@ -1,23 +1,24 @@
 export const heroSlider = [
+
   {
     id: 1,
-    title: 'banner-meat-needs-title',
-    description: 'banner-healthy-vegetable-description',
+    title: 'banner-title',
+    description: 'banner-description',
     btnText: 'text-try-now',
     btnUrl: '/search',
     image: {
       mobile: {
-        url: '/assets/images/hero/banner3.jpg',
+        url: '/assets/images/hero/banner5.jpg',
       },
       desktop: {
-        url: '/assets/images/hero/banner3.jpg',
+        url: '/assets/images/hero/banner5.jpg',
       },
     },
   },
   {
     id: 2,
-    title: 'banner-thousand-grocery-title',
-    description: 'banner-thousand-grocery-title-description',
+    title: 'banner-title',
+    description: 'banner-description',
     btnText: 'text-try-now',
     btnUrl: '/search',
     image: {
@@ -31,8 +32,8 @@ export const heroSlider = [
   },
   {
     id: 3,
-    title: 'banner-thousand-grocery-title',
-    description: 'banner-thousand-grocery-title-description',
+    title: 'banner-title',
+    description: 'banner-description',
     btnText: 'text-try-now',
     btnUrl: '/search',
     image: {
@@ -46,23 +47,8 @@ export const heroSlider = [
   },
   {
     id: 4,
-    title: 'banner-thousand-grocery-title',
-    description: 'banner-thousand-grocery-title-description',
-    btnText: 'text-try-now',
-    btnUrl: '/search',
-    image: {
-      mobile: {
-        url: '/assets/images/hero/banner5.jpg',
-      },
-      desktop: {
-        url: '/assets/images/hero/banner5.jpg',
-      },
-    },
-  },
-  {
-    id: 5,
-    title: 'banner-thousand-grocery-title',
-    description: 'banner-thousand-grocery-title-description',
+    title: 'banner-title',
+    description: 'banner-description',
     btnText: 'text-try-now',
     btnUrl: '/search',
     image: {
